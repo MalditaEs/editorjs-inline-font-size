@@ -10,16 +10,22 @@
   ],
   "description": "Inline tool to change font size for Editor.js",
   "license": "MIT",
-  "repository": "https://github.com/arwazjamal/editorjs-inline-font-size",
+  "repository": "https://github.com/malditaes/editorjs-inline-font-size",
   "main": "/dist/bundle.js",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch"
   },
-  "author": {
-    "name": "Arwaz",
-    "email": "arwaz.jamal@codinova.com"
-  },
+  "author": [
+    {
+      "name": "Arwaz",
+      "email": "arwaz.jamal@codinova.com"
+    },
+    {
+      "name": "David Fernández",
+      "email": "dfernandez@maldita.es"
+    }
+  ],
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.12.1",

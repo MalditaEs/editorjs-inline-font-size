@@ -145,6 +145,7 @@ class FontSizeTool {
 
   surround(range) {
     if (this.selectedFontSize) {
+      document.execCommand('styleWithCSS', true, true);
       document.execCommand('fontSize', false, this.selectedFontSize);
     }
   }
@@ -152,7 +153,7 @@ class FontSizeTool {
   getComputedFontStyle(node) {
     return window.getComputedStyle(node.parentElement, null).getPropertyValue('font-size');
   };
-  
+
   checkState(selection) {
     const isActive = document.queryCommandState('fontSize');
     let anchoredElementFontSize = this.getComputedFontStyle(selection.anchorNode);
