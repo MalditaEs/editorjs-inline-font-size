@@ -187,8 +187,8 @@ class FontSizeTool {
     const namespace = "http://www.w3.org/2000/svg";
     const icon = document.createElementNS(namespace, 'svg');
 
-    icon.setAttributeNS(null, 'width', width);
-    icon.setAttributeNS(null, 'height', height);
+    icon.setAttributeNS(null, 'width', 6);
+    icon.setAttributeNS(null, 'height', 6);
     icon.setAttributeNS(null, 'viewBox', '0 0 12 6');
 
     const path = document.createElementNS(namespace, 'path');
