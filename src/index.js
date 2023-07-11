@@ -54,7 +54,7 @@ class FontSizeTool {
     this.nodes.button.type = 'button';
     this.nodes.button.setAttribute('id', 'fontSizeBtn');
     this.getFontSizeForButton();
-    this.createSvg = this.svg('toggler-down', 13, 13);
+    this.createSvg = this.svg('toggler-down', 6, 6);
     this.nodes.button.appendChild(this.createSvg);
   }
   getFontSizeForButton() {
@@ -183,15 +183,22 @@ class FontSizeTool {
     this.selectedFontSize = null;
   }
 
-  svg(name, width = 14, height = 14) {
-    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg(width = 6, height = 6) {
+    const namespace = "http://www.w3.org/2000/svg";
+    const icon = document.createElementNS(namespace, 'svg');
 
-    icon.classList.add('icon', 'icon--' + name);
-    icon.setAttribute('width', width + 'px');
-    icon.setAttribute('height', height + 'px');
-    icon.innerHTML = `<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#${name}"></use>`;
+    icon.setAttributeNS(null, 'width', width);
+    icon.setAttributeNS(null, 'height', height);
+    icon.setAttributeNS(null, 'viewBox', '0 0 12 6');
 
+    const path = document.createElementNS(namespace, 'path');
+    path.setAttributeNS(null, 'd', 'M1 1 L6 5 L11 1');
+    path.setAttributeNS(null, 'stroke', 'currentColor');
+    path.setAttributeNS(null, 'fill', 'transparent');
+
+    icon.appendChild(path);
     return icon;
   }
+
 }
 module.exports = FontSizeTool
